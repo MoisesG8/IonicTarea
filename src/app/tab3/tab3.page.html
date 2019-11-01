@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Iniciar Sesion
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Correo</ion-label>
+      <ion-icon name="mail"></ion-icon>
+      <ion-input type="email" formControlName="correo"required></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label>Contra</ion-label>
+      <ion-icon name="key"></ion-icon>
+      <ion-input type="password" formControlName="contra" required></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button class="button" type="submit" color="secondary" [disabled]="!todo.valid" block>Login</button>
+   
+  </form>
+</ion-content>

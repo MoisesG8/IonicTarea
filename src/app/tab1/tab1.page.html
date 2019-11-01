@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Registrar Usuario
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="backgroun">
+    <form [formGroup]="person" (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-input type="text" formControlName="nombre" name="nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Apellido:</ion-label>
+            <ion-input type="text" formControlName="apellido" name="apellido" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Correo:</ion-label>
+            <ion-input type="email" formControlName="correo" name="correo" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>edad:</ion-label>
+            <ion-input type="number" formControlName="edad" name="edad" required></ion-input>
+        </ion-item>
+
+         <ion-item>
+            <ion-label>Contrase�a:</ion-label>
+            <ion-input type="password" formControlName="contra" name="contra" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>DPI:</ion-label>
+            <ion-input type="text" formControlName="dpi" name="dpi" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Estado Marital</ion-label>
+            <ion-select formControlName="marital" placeholder="Seleciona una opcion" required>
+                <ion-select-option value="Casado">Casado</ion-select-option>
+                <ion-select-option value="Soltero">Soltero</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label>Genero</ion-label>
+            <ion-select formControlName="genero" placeholder="Seleciona una opcion" required>
+                <ion-select-option value="Masculino">Hombre</ion-select-option>
+                <ion-select-option value="Femenino">Mujer</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+
+        <button class="button" [disabled]="person.invalid" ion-button type=" submit " block>Add Todo</button>
+    </form>
+</ion-content>
