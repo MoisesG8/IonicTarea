@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {UserService} from '../api/user.service';
+import {  Router } from '@angular/router';
+
 //
 @Component({
   selector: 'app-tab3',
@@ -12,6 +14,7 @@ export class Tab3Page {
   constructor(
     private formBuilder: FormBuilder,
     private _UserService: UserService,
+    private router:Router
   ) {
     this.todo = this.formBuilder.group({
       correo: ['', Validators.required],
@@ -26,6 +29,7 @@ export class Tab3Page {
       Response => {
         console.log("Usted se ha logueado"),
         console.log(Response),
+        this.router.navigateByUrl('/panel');
         this.todo.reset();
       }, error => {
         console.log( <any> error);

@@ -6,7 +6,6 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import {  NavController } from '@ionic/angular';
 
-
 @NgModule({
   imports: [
     IonicModule,

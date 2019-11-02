@@ -15,6 +15,10 @@
     <ion-list *ngFor="let usuario of usuarios">
         <ion-item>
             <ion-icon name="person"></ion-icon>
+            <ion-label>Nombre:</ion-label>
+            <ion-label>{{usuario.nombre}}</ion-label>
+            <br>
+            <ion-label>Apellidos:</ion-label>
             <ion-label>{{usuario.apellido}}</ion-label>
         </ion-item>
     </ion-list>
