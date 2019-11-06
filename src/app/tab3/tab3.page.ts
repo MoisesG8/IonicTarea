@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import {UserService} from '../api/user.service';
 import {  Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 //
 @Component({
@@ -11,10 +12,12 @@ import {  Router } from '@angular/router';
 })
 export class Tab3Page {
   private todo: FormGroup;
+  private response:any;
   constructor(
     private formBuilder: FormBuilder,
     private _UserService: UserService,
-    private router:Router
+    private router:Router,
+    private storage: Storage
   ) {
     this.todo = this.formBuilder.group({
       correo: ['', Validators.required],
@@ -27,15 +30,16 @@ export class Tab3Page {
 
     this._UserService.login(user.correo, user.contra).subscribe(
       Response => {
-        console.log("Usted se ha logueado"),
-        console.log(Response),
+        console.log('Usted se ha logueado');
+        console.log(Response);
+        this.response = Response;        
+        this.storage.set('user', Response)
         this.router.navigateByUrl('/panel');
-        this.todo.reset();
+        this.todo.reset(); 
       }, error => {
         console.log( <any> error);
       }
     ) 
- 
   }
 
 }

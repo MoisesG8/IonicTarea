@@ -15,7 +15,7 @@ export class UserService {
   constructor(
     public _http: HttpClient
   ) {
-    this.url = 'http://35383369.ngrok.io/';
+    this.url = 'https://6c9fbf23.ngrok.io/';
 
   }
 
@@ -71,6 +71,19 @@ export class UserService {
 
       );
 
+  }
+  public sendCredit(monto_solicitado: number, id_usuario: number,  descripcion: string) {
+    let credito = {
+        'monto_solicitado': monto_solicitado,
+        'id_cantidad_cuota': 1,
+        'id_usuario': id_usuario,
+        "estado": "P",
+        'descripcion': descripcion
+    };
+    return this._http.post(this.url + 'api/loanmanagement/generate', credito, this.httpOptions).pipe(
+      retry(1),
+      catchError(this.errorHandl)
+    );
   }
 
   errorHandl(error: HttpErrorResponse) {

@@ -1,9 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>panel</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Solicitud de Credito</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="blackground">
+    <form [formGroup]="credito" (ngSubmit)="sendRest()">
+        <ion-item>
+            <ion-label>Monto:</ion-label>
+            <ion-icon name="cash"></ion-icon>
+            <ion-input type="number" formControlName="monto_solicitado" name="monto_solicitado" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Descripcion:</ion-label>
+            <ion-icon name="text"></ion-icon>
+            <ion-input type="text" formControlName="descripcion" name="descripcion" required></ion-input>
+        </ion-item>
+        <button class="button" [disabled]="credito.invalid" ion-button type=" submit " block>Solicitar Credito</button>
+    </form>
 </ion-content>

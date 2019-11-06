@@ -10,29 +10,35 @@
     <form [formGroup]="person" (ngSubmit)="logForm()">
         <ion-item>
             <ion-label>Nombre:</ion-label>
+            <ion-icon name="contact"></ion-icon>
             <ion-input type="text" formControlName="nombre" name="nombre" required></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Apellido:</ion-label>
+            <ion-icon name="contact"></ion-icon>
             <ion-input type="text" formControlName="apellido" name="apellido" required></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label>Correo:</ion-label>
+            <ion-icon name="mail"></ion-icon>
             <ion-input type="email" formControlName="correo" name="correo" required></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>edad:</ion-label>
+            <ion-icon name="calendar"></ion-icon>
             <ion-input type="number" formControlName="edad" name="edad" required></ion-input>
         </ion-item>
 
-         <ion-item>
-            <ion-label>Contrase�a:</ion-label>
+        <ion-item>
+            <ion-label>Contraseña:</ion-label>
+            <ion-icon name="key"></ion-icon>
             <ion-input type="password" formControlName="contra" name="contra" required></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label>DPI:</ion-label>
+            <ion-icon name="checkmark-circle"></ion-icon>
             <ion-input type="text" formControlName="dpi" name="dpi" required></ion-input>
         </ion-item>
 
@@ -47,6 +53,8 @@
 
         <ion-item>
             <ion-label>Genero</ion-label>
+            <ion-icon name="woman"></ion-icon>
+            <ion-icon name="man"></ion-icon>
             <ion-select formControlName="genero" placeholder="Seleciona una opcion" required>
                 <ion-select-option value="Masculino">Hombre</ion-select-option>
                 <ion-select-option value="Femenino">Mujer</ion-select-option>
